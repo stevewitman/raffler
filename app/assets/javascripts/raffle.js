@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp',[]);
 
 myApp.controller('RaffleCtrl', ['$scope', function($scope) {
-  return $scope.entries = [
+  $scope.entries = [
     {
       name: "Mike"
     }, {
@@ -10,4 +10,9 @@ myApp.controller('RaffleCtrl', ['$scope', function($scope) {
       name: "Nicole"
     }
   ];
+  $scope.addEntry = function() {
+  	$scope.entries.push($scope.newEntry);
+  	$scope.newEntry = {};
+  }
+
 }]);
